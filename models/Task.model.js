@@ -18,7 +18,7 @@ const taskSchema = new Schema(
     tasks: [{ type: Schema.Types.ObjectId, ref: "Workout" }],
   },
   {
-    timestamps: true, // Add timestamps for createdAt and updatedAt
+    timestamps: true, 
   }
 );
 

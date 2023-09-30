@@ -20,6 +20,9 @@ app.use("/api", isAuthenticated, taskRouter);
 const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);
 
+const userProfile = require("./routes/userprofile.routes");
+app.use("/userprofile", isAuthenticated, userProfile);
+
 require("./error-handling")(app);
 
 module.exports = app;
