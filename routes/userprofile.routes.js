@@ -28,10 +28,12 @@ router.put(
     const user = request.payload;
     const userId = user._id;
     console.log(userId);
-    console.log(name, email, avatar);
+    console.log(name, email, avatar, 'jjj', req.file);
     avatar = req.file ? req.file.path : undefined;
-    User.findByIdAndUpdate(userId, { name, avatar, email }, { new: true })
-      .then((profileUpdated) => res.json(profileUpdated))
+    User.findByIdAndUpdate(userId, { name, avatar: req.file.path, email }, { new: true })
+      .then((profileUpdated) => {
+          return res.json(profileUpdated);
+      })
       .catch((error) => res.json(error));
   }
 );
