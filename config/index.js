@@ -19,7 +19,10 @@ module.exports = (app) => {
 
   app.use(
     cors({
-      origin: [process.env.CLIENT_URL],
+      origin: [
+        "https://cozy-creponne-bcc674.netlify.app/",
+        "http://localhost:5173",
+      ],
     })
   );
 

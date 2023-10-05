@@ -8,6 +8,10 @@ const { isAuthenticated } = require("./../middleware/jwt.middleware.js");
 const router = express.Router();
 const saltRounds = 10;
 
+router.get("/signup", (req, res, next) => {
+  res.send("Signup route is working ! ");
+});
+
 // POST /auth/signup  - Creates a new user in the database
 router.post("/signup", (req, res, next) => {
   const { email, password, name } = req.body;
